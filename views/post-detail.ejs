@@ -9,13 +9,16 @@
 <body>
   <%- include('includes/header') %>
   <main id="post-detail">
-    <h1><%= post[0].title %></h1>
+    <h1><%= post.title %></h1>
     <section id="post-meta">
-      <%= post[0].summary %>
+      <address>
+        <a href="mailto:<%= post.author_email %>"><%= post.author_name %></a> 
+      </address> |
+      <time datetime="<%= post.humanReadableDate %>"><%= post.humanReadableDate %></time>
     </section>
     <hr>
     <section>
-      <p id="body"><%= post[0].body %></p>
+      <p id="body"><%= post.body %></p>
     </section>
   </main>
 </body>
